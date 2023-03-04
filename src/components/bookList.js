@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import DisplayBooks from './displaybooks';
 
 export default function BooksList() {
   const [books] = useState([
@@ -34,7 +33,35 @@ export default function BooksList() {
       {
         books.map((book) => (
           <div key={book.id} className="container">
-            <DisplayBooks book={book} />
+            <div className="book">
+              <div className="aboutBook">
+                <p>{book.category}</p>
+                <h2>{book.title}</h2>
+                <a href="#head">{book.author}</a>
+                <div className="bookAction">
+                  <a href="#comments">Comments</a>
+                  {' '}
+                  |
+                  <a href="#remove">Remove</a>
+                  |
+                  <a href="#edit">Edit</a>
+                </div>
+              </div>
+
+              <div className="progress">
+                <progress value={book.progress} max="100" />
+                <div className="progressDetail">
+                  <h4>{book.currentChapter}</h4>
+                  <span>Completed</span>
+                </div>
+              </div>
+
+              <div className="currentChapter">
+                <p>Current Chapter</p>
+                <h4>{book.currentChapter}</h4>
+                <button type="button">Update Progress</button>
+              </div>
+            </div>
           </div>
         ))
 }
