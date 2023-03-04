@@ -1,0 +1,28 @@
+.addContainer {
+  margin: 2em 7%;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  flex: 2.5;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  margin-right: 2em;
+}
+
+select {
+  flex: 1;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  margin-right: 2em;
+  color: #9c8c7c;
+}
+
+::placeholder,
+option .myDisabled {
+  color: #9c8c7c;
+}
