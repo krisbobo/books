@@ -1,20 +1,36 @@
-import React from 'react';
-import style from './addBook.module.css';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/books';
 
-export default function AddBook() {
+const BookInput = () => {
+  const dispatch = useDispatch();
+  const [bookTitle, setTitle] = useState('');
+  const [bookAuthor, setAuthor] = useState('');
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    if (bookTitle.trim() !== '' && bookAuthor.trim() !== '') {
+      const payload = { id: uuidv4(), bookTitle, bookAuthor };
+      dispatch(addBook(payload));
+      setTitle('');
+      setAuthor('');
+    } else {
+      setTitle('');
+      setAuthor('');
+    }
+  };
+
   return (
-    <div className={style.addContainer}>
+    <div className="add-book">
       <h2>Add New Book</h2>
-      <form>
-        <input type="text" placeholder="Insert title ..." />
-        <select name="category">
-          <option disabled selected className={style.myDisable}>Category</option>
-          <option value="Action">Action</option>
-          <option value="Science Fiction">Science Fiction</option>
-          <option value="Economy">Economy</option>
-        </select>
-        <button type="submit">Add Book</button>
+      <form className="inputs">
+        <input type="text" name="title" value={bookTitle} onChange={(e) => setTitle(e.target.value)} placeholder="Book Title" id="title" required />
+        <input type="text" name="author" value={bookAuthor} onChange={(e) => setAuthor(e.target.value)} placeholder="Book Author" id="author" required />
+        <button type="submit" onClick={handleForm}>ADD BOOK</button>
       </form>
     </div>
   );
-}
+};
+
+export default BookInput;
