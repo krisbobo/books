@@ -1,136 +1,133 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,500&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
   margin: 0;
-  text-decoration: none;
+  color: black;
+  background-color: rgb(247, 247, 247);
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
-  padding: 1em;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 5px 5px 10px gainsboro;
+  width: 100%;
+  height: 5rem;
 }
 
-nav ul li {
-  display: inline-block;
-  padding: 0 1em;
+nav ul {
+  display: flex;
+  list-style: none;
 }
 
-.book {
+nav a {
+  text-decoration: none;
+  color: black;
+  margin-right: 2em;
+}
+
+.header h1 {
+  margin-left: 1em;
+  color: #2d99f1;
+}
+
+.items {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  padding: 1em;
+  margin: 2em 3em;
 }
 
-.book p {
-  font-size: 0.97rem;
-  color: var(--bgColor);
+.items h2 {
+  margin: 1em 0 0 1em;
 }
 
-.book a {
-  font-size: 0.97rem;
-  color: var(--blue);
-  text-decoration: none;
+.items h3 {
+  color: #2d99f1;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 0 1em 1.7em;
 }
 
-.bookAction {
-  color: var(--bg-border);
-  font-weight: 300;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0.8em 0;
-  width: 80%;
-}
-
-.progress {
+.buttons {
   display: flex;
   flex-direction: row;
-  gap: 2em;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1em;
 }
 
-.progressDetail {
+.buttons button {
+  color: #2d99f1;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  width: 6em;
+}
+
+.buttons span {
+  color: rgb(45, 153, 241, 0.3);
+}
+
+.add-book {
+  margin: 1em 0 0 2.2em;
+}
+
+.add-book h2 {
+  color: rgb(128, 128, 128, 0.7);
+}
+
+.inputs {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 0.25em;
+  flex-direction: row;
 }
 
-.progressDetail h4 {
-  font-size: 1.47em;
-  font-weight: 400;
+.add-book #title {
+  padding: 0.8em;
+  width: 30em;
+  border: 1px solid rgb(220, 220, 220);
+  font-family: "Poppins", sans-serif;
+  margin-right: 2em;
+  border-radius: 0.5em;
 }
 
-.progress span {
-  font-size: 0.77em;
-  font-weight: 300;
+.add-book #author {
+  padding: 0.8em;
+  width: 10em;
+  border: 1px solid #dcdcdc;
+  font-family: "Poppins", sans-serif;
+  margin-right: 2em;
+  border-radius: 0.5em;
 }
 
-.currentChapter {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6em;
+.add-book button {
+  border: none;
+  background-color: #2d99f1;
+  color: white;
+  border-radius: 0.5em;
+  width: 10em;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 
-.currentChapter p {
-  font-size: 0.7em;
-  text-transform: uppercase;
+#line {
+  border: 1px solid rgb(220, 220, 220, 0.5);
+  margin: 0 2.5em;
 }
 
-.currentChapter h4 {
+.categories button {
+  border: none;
+  background-color: #2d99f1;
+  color: white;
+  border-radius: 0.5em;
+  width: 10em;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  margin: 3em;
+  padding: 0.5em;
   font-size: 1em;
-  font-weight: 400;
-}
-
-.currentChapter button {
-  background-color: var(--blue-100);
-  color: var(--secondary);
-  text-transform: uppercase;
-  font-size: 0.77em;
-  padding: 0.37em;
-  width: 50%;
-  border-radius: 3px;
-}
-
-@media (min-width: 720px) {
-  .book {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2em;
-    width: 100%;
-  }
-
-  .aboutBook {
-    flex: 2;
-  }
-
-  .bookAction {
-    gap: 1em;
-  }
-
-  .book a {
-    font-size: 0.97rem;
-    color: var(--blue);
-    text-decoration: none;
-    padding-right: 1rem;
-  }
-
-  .progress {
-    flex: 1;
-    align-content: center;
-    justify-content: center;
-    gap: 0.47em;
-  }
-
-  .progress progress {
-    width: 50px;
-  }
-
-  .currentChapter {
-    flex: 1.5;
-    padding: 0 1em;
-  }
-
-  .currentChapter button {
-    width: fit-content;
-    padding: 0.7em 0.97em;
-  }
 }
