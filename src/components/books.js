@@ -1,13 +1,12 @@
 import React from 'react';
-import AddBook from './addBook';
-import BooksList from './bookList';
+import BookInput from './addBook';
+import BookList from './bookList';
 
-export default function Books() {
-  return (
-    <div>
-      <BooksList />
-      <hr />
-      <AddBook />
-    </div>
-  );
-}
+const Books = () => (
+  <div className="book-column">
+    <BookList />
+    <BookInput />
+  </div>
+);
+
+export default Books;
