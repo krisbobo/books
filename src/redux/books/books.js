@@ -1,25 +1,72 @@
-/* eslint-disable */
-import { createSlice } from '@reduxjs/toolkit';
-import books from '../state/stateSlice';
+import axios from 'axios';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const initialState = { books };
+const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/SWIVKzUawkODatfSUdG4/books';
 
-const booksSlice = createSlice({
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const GET_BOOKS = 'bookstore/books/GET_BOOKS';
+
+const deleteBook = (state, bookID) => state.filter((book) => book.id !== bookID.payload);
+
+const formattedBooks = (response) => Object.entries(response.data).map((arr) => {
+  const [id, [{ title, author, category }]] = arr;
+  return {
+    id, title, author, category,
+  };
+});
+
+export const getBooks = createAsyncThunk(GET_BOOKS,
+  async () => {
+    const response = await axios.get(baseURL);
+    return formattedBooks(response);
+  });
+
+export const addBook = createAsyncThunk(
+  ADD_BOOK,
+  async (payload) => {
+    const {
+      id, title, author, category,
+    } = payload;
+    await axios.post(baseURL, {
+      item_id: id, title, author, category,
+    });
+    return payload;
+  },
+);
+
+export const removeBook = createAsyncThunk(REMOVE_BOOK,
+  async (id) => {
+    await axios.delete(`${baseURL}/${id}`);
+    return id;
+  });
+
+const bookSlice = createSlice({
   name: 'books',
-  initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.books = [...state.books, action.payload];
-      console.log(state.books)
-    },
-    removeBook: (state, { payload }) => ({
-      ...state,
-      books: state.books.filter((book) => book.item_id !== payload),
-    }),
+  initialState: {
+    books: [],
+    status: 'idle',
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getBooks.fulfilled, (state, action) => {
+      const states = state;
+      states.status = 'success';
+      states.books = action.payload;
+    });
+    builder.addCase(removeBook.fulfilled, (state, action) => {
+      const states = state;
+      states.status = 'success';
+      states.books = deleteBook(states.books, action);
+    });
+    builder.addCase(addBook.fulfilled, (state, action) => {
+      const states = state;
+      states.status = 'success';
+      states.books = [
+        ...states.books,
+        action.payload,
+      ];
+    });
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
-
-export default booksSlice.reducer;
-
+export default bookSlice.reducer;
