@@ -4,18 +4,25 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
 const DisplayBooks = ({ book }) => {
+  const {
+    id,
+    title,
+    author,
+    category,
+  } = book;
+
   const dispatch = useDispatch();
 
   const handleRemove = (e) => {
     e.preventDefault();
-    dispatch(removeBook(book.item_id));
+    dispatch(removeBook(id));
   };
 
   return (
     <div className="items">
-      <h3>{book.category}</h3>
-      <h2>{book.title}</h2>
-      <h3>{book.author}</h3>
+      <h2>{category}</h2>
+      <h2>{title}</h2>
+      <h3>{author}</h3>
       <div className="buttons">
         <button type="button">Comments</button>
         <span> | </span>
@@ -29,10 +36,10 @@ const DisplayBooks = ({ book }) => {
 
 DisplayBooks.propTypes = {
   book: PropTypes.shape({
-    item_id: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
   }).isRequired,
 };
 
