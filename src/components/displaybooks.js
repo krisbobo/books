@@ -19,11 +19,11 @@ const DisplayBooks = ({ book }) => {
   const [counter, setCounter] = useState(0);
 
   const increase = () => {
-    setCounter((count) => (count < 10 ? count + 1 : count));
+    setCounter((count) => (count < 50 ? count + 1 : count));
   };
 
   const increasePercentage = () => {
-    setPercentage((count) => (count < 100 ? count + 10 : count));
+    setPercentage((count) => (count < 100 ? count + 2 : count));
   };
 
   const handleRemove = (e) => {
@@ -47,7 +47,11 @@ const DisplayBooks = ({ book }) => {
       </div>
       <div className="progress">
         <div className="percentage">
-          <CircularProgressbar value={percentage} text={`${percentage}%`} />
+          <CircularProgressbar value={percentage} />
+        </div>
+        <div>
+          <div className="percent">{`${percentage}%`}</div>
+          <h4>Completed</h4>
         </div>
         <span className="VLine" />
         <div>
