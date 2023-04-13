@@ -13,7 +13,6 @@ const BookList = () => {
   return (
     <>
       <div className="container">
-        <h2 id="head">Book List</h2>
         {books && books.map((book) => <DisplayBooks key={book.id} book={book} />)}
       </div>
       <div id="line" />
