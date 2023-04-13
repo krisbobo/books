@@ -41,29 +41,28 @@ nav a {
   color: #2d99f1;
 }
 
-.container #head {
-  text-align: center;
-  font-weight: 600;
-  font-size: 2em;
+.book-column {
+  padding: 0 2.5em;
+}
+
+.container {
+  margin-top: 3em;
 }
 
 .item-container {
   display: flex;
   align-items: center;
   background-color: white;
-  padding: 1em;
-  margin-bottom: 1em;
+  padding: 0.8em;
+  margin-bottom: 1.3em;
   border: 1px solid rgb(220, 220, 220, 0.7);
   border-radius: 0.3em;
-  gap: 12rem;
 }
 
 .items {
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 1em;
-  margin: 1em 3em;
 }
 
 .items h2 {
@@ -75,6 +74,13 @@ nav a {
   font-size: 0.8em;
   font-weight: normal;
   margin: 0 0 1em 1.9em;
+}
+
+.items h4 {
+  margin: 0 0 0 1.6em;
+  font-size: 0.9em;
+  color: #808080;
+  font-weight: 300;
 }
 
 .buttons {
@@ -134,14 +140,13 @@ nav a {
   background-color: #2d99f1;
   color: white;
   border-radius: 0.5em;
-  width: 10em;
+  width: 8em;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
 
 #line {
   border: 1px solid rgb(220, 220, 220, 0.5);
-  margin: 0 2.5em;
 }
 
 .categories button {
@@ -162,7 +167,14 @@ nav a {
 }
 
 .percentage {
-  width: 5.5em;
+  width: 5.2em;
+  margin-left: 7em;
+  padding-left: 1em;
+}
+
+.percent {
+  font-size: 1.8em;
+  font-weight: 400;
 }
 
 .progress {
@@ -170,7 +182,7 @@ nav a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .progress button {
@@ -178,7 +190,7 @@ nav a {
   background-color: #2d99f1;
   color: white;
   border-radius: 0.5em;
-  width: 15em;
+  width: 11.2em;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   padding: 0.5em;
@@ -200,6 +212,6 @@ nav a {
 
 .VLine {
   border-left: 2px solid rgb(220, 220, 220, 0.5);
-  height: 5em;
+  height: 6em;
   margin: 0 1em;
 }
