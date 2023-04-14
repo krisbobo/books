@@ -3,7 +3,7 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import Navbar from './navbar';
 
 const Header = () => (
-  <div className="header">
+  <div className="header flex">
     <h1>Bookstore CMS</h1>
     <Navbar />
     <div className="icon"><FaRegUserCircle /></div>

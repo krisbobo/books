@@ -32,12 +32,12 @@ const DisplayBooks = ({ book }) => {
   };
 
   return (
-    <div className="item-container">
-      <div className="items">
+    <div className="item-container flex">
+      <div className="items flex">
         <h4>{category}</h4>
         <h2>{title}</h2>
         <h3>{author}</h3>
-        <div className="buttons">
+        <div className="buttons flex">
           <button type="button">Comments</button>
           <span> | </span>
           <button type="button" onClick={handleRemove}>Remove</button>
@@ -45,7 +45,7 @@ const DisplayBooks = ({ book }) => {
           <button type="button">Edit</button>
         </div>
       </div>
-      <div className="progress">
+      <div className="progress flex">
         <div className="percentage">
           <CircularProgressbar value={percentage} />
         </div>
