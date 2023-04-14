@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,500&display=swap");
 
+.flex {
+  display: flex;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -7,8 +11,15 @@ body {
   background-color: rgb(247, 247, 247);
 }
 
+#root {
+  box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.2);
+  margin: 5em 3em;
+  padding-bottom: 10em;
+  border-radius: 0.5em;
+  background-color: rgb(247, 247, 247);
+}
+
 .header {
-  display: flex;
   text-align: center;
   align-items: center;
   background-color: white;
@@ -29,31 +40,57 @@ nav a {
 }
 
 .header h1 {
-  margin-left: 1em;
+  margin-left: 3.4em;
   color: #2d99f1;
 }
 
+.icon {
+  padding-left: 14em;
+  color: #2d99f1;
+  font-size: 1.6em;
+}
+
+.book-column {
+  padding: 0 7em;
+}
+
+.container {
+  margin-top: 3em;
+}
+
+.item-container {
+  align-items: center;
+  background-color: white;
+  padding: 0.8em;
+  margin-bottom: 1.3em;
+  border: 1px solid rgb(220, 220, 220, 0.7);
+  border-radius: 0.3em;
+}
+
 .items {
-  display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 1em;
-  margin: 2em 3em;
 }
 
 .items h2 {
-  margin: 1em 0 0 1em;
+  margin: 0 0 0 0.9em;
 }
 
 .items h3 {
   color: #2d99f1;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: normal;
-  margin: 0 0 1em 1.7em;
+  margin: 0 0 1em 1.9em;
+}
+
+.items h4 {
+  margin: 0 0 0 1.6em;
+  font-size: 0.9em;
+  color: #808080;
+  font-weight: 300;
 }
 
 .buttons {
-  display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
@@ -82,7 +119,6 @@ nav a {
 }
 
 .inputs {
-  display: flex;
   flex-direction: row;
 }
 
@@ -109,14 +145,13 @@ nav a {
   background-color: #2d99f1;
   color: white;
   border-radius: 0.5em;
-  width: 10em;
+  width: 8em;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
 
 #line {
   border: 1px solid rgb(220, 220, 220, 0.5);
-  margin: 0 2.5em;
 }
 
 .categories button {
@@ -130,4 +165,57 @@ nav a {
   margin: 3em;
   padding: 0.5em;
   font-size: 1em;
+}
+
+.categories h2 {
+  margin: 1em 0 0 2.5em;
+}
+
+.percentage {
+  width: 5.2em;
+  margin-left: 7em;
+  padding-left: 1em;
+}
+
+.percent {
+  font-size: 1.8em;
+  font-weight: 400;
+}
+
+.progress {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.progress button {
+  border: none;
+  background-color: #2d99f1;
+  color: white;
+  border-radius: 0.5em;
+  width: 11.2em;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.progress h4 {
+  color: #808080;
+  font-weight: lighter;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.progress h3 {
+  color: black;
+  font-weight: normal;
+  font-size: 1em;
+  margin-top: 0;
+}
+
+.VLine {
+  border-left: 2px solid rgb(220, 220, 220, 0.5);
+  height: 6em;
+  margin: 0 1em;
 }
