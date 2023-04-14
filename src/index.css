@@ -37,12 +37,18 @@ nav a {
 }
 
 .header h1 {
-  margin-left: 1em;
+  margin-left: 3.4em;
   color: #2d99f1;
 }
 
+.icon {
+  padding-left: 14em;
+  color: #2d99f1;
+  font-size: 1.6em;
+}
+
 .book-column {
-  padding: 0 2.5em;
+  padding: 0 7em;
 }
 
 .container {
